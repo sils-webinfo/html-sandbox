@@ -65,6 +65,25 @@
 
   <section id="gperasso">
      <h1>gperasso</h1>
+       <p id="demo">Click the button to get your coordinates:</p>
+       <button onclick="getLocation()">Try It</button>
+       <script>
+         var x=document.getElementById("demo");
+         function getLocation()
+          {
+          if (navigator.geolocation)
+           {
+           navigator.geolocation.getCurrentPosition(showPosition);
+           }
+          else{x.innerHTML="Geolocation is not supported by this browser.";}
+          }
+         function showPosition(position)
+          {  
+          x.innerHTML="Latitude: " + position.coords.latitude + 
+          "<br />Longitude: " + position.coords.longitude; 
+          }
+        </script>  
+     
   </section>
 
   <section id="gwilhelm">
