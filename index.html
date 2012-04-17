@@ -174,7 +174,23 @@ if (toggle.classList) {
   </section>
 
   <section id="mattpoland">
+	<h1>mattpoland</h1>
+	<header>
+	<h1>navigator.onLine testing</h1>
+	</header>
 
+	<article>
+	  <p>Current network status: <span id="status">checking...</span></p>
+	  <p>A timer is constantly polling the navigator.onLine property, which is typically switched via File -> Work Offline</p>
+	</article>
+	<script>
+	var statusElem = document.getElementById('status')
+
+	setInterval(function () {
+	  statusElem.className = navigator.onLine ? 'online' : 'offline';
+	  statusElem.innerHTML = navigator.onLine ? 'online' : 'offline';  
+	}, 250);    
+	</script>
   </section>
 
   <section id="mgargard">
