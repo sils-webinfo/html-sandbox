@@ -60,6 +60,78 @@
   </section>
 
   <section id="dotlikeimpact">
+<section id="wrapper">
+
+   
+      <h1>dotlikeimpact</h1>
+  
+
+<style>
+#classListTest {
+  padding: 5px;
+  border: 1px solid #ccc;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+#classListTest:after {
+  content: 'class: ' attr(class);
+  position: absolute;
+  background: #c80;
+  bottom: 0;
+  right: 0;
+  padding: 5px;
+  color: #fff;
+}
+
+.big { font-size: 50px; line-height: 50px; }
+.bold { font-weight: bold; }
+.green { background: #00CD00; color: #fff; }
+
+#status {
+  background: #c80;
+}
+</style>
+<article>
+  <p>Clicking the buttons below will toggle the class on the <em><span itemscope itemtype="http://schema.org/CollectionPage" itemprop="name"><a href="http://bluthipsum.com/" itemprop="url">Bluth ipsum</a></span></em> text below, assigning the class with the same name (styles seen below). This is done using the new <code>classList</code> API.</p>
+  <p id="status">Not supported :(</p> 
+  <pre><code><style> 
+  .big { font-size: 50px; }
+  .bold { font-weight: bold; }
+  .green { background: #00CD00; color: #fff; }
+</style></code></pre>
+    <p id="classListTest">Bob Loblaw Law Blog. If this were a Lifetime Moment of Truth movie, this would be our act break. But it wasn't. No, Pop-pop does not get a treat, I just brought you a [bleep]ing pizza. I'll buy you a hundred George Michaels that you can teach to drive! I am having a love affair with this ice cream sandwich. Family Love Michael. Suddenly playing with yourself is a scholarly pursuit? Buster, you remember when we were kissing last night? Buster: It was a wild, wild ride...</p>
+    <p id="toggleClass">Toggle a class: 
+      <input type="button" value="big" />
+      <input type="button" value="bold" />
+      <input type="button" value="green" />
+    </p>
+</article>
+<script>
+// checkfor support
+
+var toggle = document.getElementById('toggleClass'),
+    test = document.getElementById('classListTest');
+
+if (toggle.classList) {
+  var supported = document.getElementById('status');
+  supported.parentNode.removeChild(supported);
+  // bit of event delegation otherwise we're binding to each input
+  toggle.addEventListener('click', function (event) {
+    if (event.target.nodeName == 'INPUT') {
+      test.classList.toggle(event.target.value);
+    }
+  }, false);
+} else {
+  // not supported
+}
+
+
+
+
+
+
+</script>
 
   </section>
 
