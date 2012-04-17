@@ -44,7 +44,7 @@
   </section>
 
   <section id="carrboro">
-	    <article></article>
+  	<h1>carrboro</h1>
 <script>
 
 buildSpinner({ x : 50, y : 50, size : 20, degrees : 30 });
@@ -54,7 +54,7 @@ function buildSpinner(data) {
   var canvas = document.createElement('canvas');
   canvas.height = 100;
   canvas.width = 300;
-  document.getElementsByTagName('article')[0].appendChild(canvas);
+  document.getElementById('carrboro').appendChild(canvas);
   var ctx = canvas.getContext("2d"),
     i = 0, degrees = data.degrees, loops = 0, degreesList = [];
     
@@ -227,7 +227,7 @@ if (toggle.classList) {
 
 
 </script>
-
+</section>
   </section>
 
   <section id="gperasso">
@@ -387,9 +387,9 @@ upload.onchange = function (e) {
 
   <section id="yhannc">
   <h1>yhannc</h1>
-	<canvas height="150" width="800"></canvas>
+	<canvas height="150" width="800" id="gradient-canvas"></canvas>
 	<script>
-	var canvas = document.getElementsByTagName('canvas')[0],
+	var canvas = document.getElementById('gradient-canvas'),
 		ctx = null,
 		grad = null,
 		body = document.getElementsByTagName('body')[0],
